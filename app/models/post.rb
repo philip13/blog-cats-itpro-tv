@@ -1,8 +1,12 @@
 class Post < ApplicationRecord
- validates :title, presence: true, uniqueness: true
+  has_many :comments
+  
+  validates :title, presence: true, uniqueness: true
 
- validates :body, presence: true
- validate :cant_say_balderdash
+  validates :body, presence: true
+  validate :cant_say_balderdash
+
+
 
 
  def cant_say_balderdash
