@@ -1,15 +1,21 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <strong>Title:</strong>
+  <h1>
+    <%= @post.title %>
+  </h1>
+</p>
+<p>
+  <%= image_tag @post.image.url %>
+</p>
+<p>
   <strong>Body:</strong>
   <%= @post.body %>
 </p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @post.title %>
-</p>
-
+<hr/>
+<strong>Post Comments:</strong>
 <ul>
   <% @post.comments.each do |c| %>
     <li><%= c.body %></li>
