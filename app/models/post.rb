@@ -14,7 +14,7 @@ class Post < ApplicationRecord
 
  def cant_say_balderdash
   if body =~ /balderdash/
-    error.add :body, "Can't say that word!" # :base base is used if want a global error
+    errors.add :body, "Can't say that word!" # :base base is used if want a global error
   end
  end
 
