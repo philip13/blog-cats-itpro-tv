@@ -2,7 +2,7 @@
 
 one:
   body: MyString
-  title: MyString
+  title: <%= "MyString #{rand(100)}" %>
 
 two:
   body: MyString
