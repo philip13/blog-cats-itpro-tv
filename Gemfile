@@ -63,3 +63,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem "paperclip"
 gem "devise"
+
+gem 'webpacker', '~> 5.x'
