@@ -33,3 +33,6 @@ public/system/
 /yarn-error.log
 yarn-debug.log*
 .yarn-integrity
+
+#IOS
+.DS_Store
