@@ -1,5 +1,59 @@
-// application.scss
-
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
-@import 'tailwindcss/utilities'; 
+@import 'tailwindcss/utilities';
+
+@layer components {
+  .btn {
+    @apply py-3 px-5 rounded-lg uppercase tracking-wider font-semibold text-sm sm:text-base transition duration-300;
+  }
+
+  .btn-md {
+    @apply py-2 px-2 font-medium rounded-md text-sm;
+  }
+
+  .btn-pink {
+    @apply text-white bg-red-300 hover:bg-red-400;
+  }
+
+  .btn-blue {
+    @apply text-white bg-blue-300 hover:bg-blue-400;
+  }
+
+  .btn-outline-pink {
+    @apply text-red-300 border-2 border-red-300 hover:text-gray-100 hover:bg-red-200;
+  }
+
+  .input-field {
+    @apply py-2 px-4 border-2 border-blue-600 focus:border-blue-200 rounded-lg w-full;
+  }
+
+  .input-file-field {
+    @apply flex flex-row justify-between border-2 border-blue-600 rounded-lg cursor-pointer;
+    p.text-file-name {
+      @apply w-full py-2 px-4;
+    }
+    .btn-browse {
+      @apply px-4 py-2 bg-gray-300  border-l-2 border-blue-600 rounded-r-lg;
+    }
+  }
+}
+
+
+.field_with_errors {
+  // @extend .has-error;
+  @apply w-full bg-white text-red-500;
+  input[type="email"],
+  input[type="password"] {
+    @apply py-2 px-4 border-2 border-red-600 focus:border-blue-200 rounded-lg w-full;
+  }
+
+  select{
+    border-color: #a94442 !important;
+  }
+
+  input[type="checkbox"]{
+    border: 5px;
+    border-color: #a94442 !important;
+  }
+}
+
