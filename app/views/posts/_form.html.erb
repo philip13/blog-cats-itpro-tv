@@ -1,31 +1,33 @@
 <%= form_with(model: post, local: true) do |form| %>
   <% if post.errors.any? %>
-    <div id="error_explanation">
+    <div id="error_explanation w-full text-red-500">
       <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
-
-      <ul>
-      <% post.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
     </div>
   <% end %>
 
   <div class="field">
     <%= form.label :body %>
-    <%= form.text_field :body %>
+    <%= form.text_field :body, class: "input-field" %>
+    <%= (inline_error_messages post, :body).html_safe %>
   </div>
 
   <div class="field">
     <%= form.label :title %>
-    <%= form.text_field :title %>
+    <%= form.text_field :title, class: "input-field" %>
+    <%= (inline_error_messages post, :title).html_safe %>
   </div>
 
   <div class="field">
-    <%= form.file_field :image %>
+    <div class="input-file-field" data-input="post_image">
+      <p class="text-file-name ">Chose File...</p>
+      <span class="btn-browse">Browse</span>
+    </div>
+    <%= form.file_field :image, class: "hidden" %>
+    <%= (inline_error_messages post, :image).html_safe %>
+
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="actions text-right">
+    <%= form.submit post.new_record? ? "Save" : "Update", class: "shadow-lg btn btn-blue" %>
   </div>
 <% end %>

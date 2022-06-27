@@ -11,7 +11,7 @@
         Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed vel laoreet turpis.
       </p>
       <div class="mt-4 sm:mt-6">
-        <a class="inline-block px-5 py-3 rounded-lg bg-red-300 uppercase tracking-wider font-semibold text-sm text-white shadow-lg sm:text-base hover:bg-red-400 transition duration-300" href="#"> READ MORE</a>
+        <a class="inline-block shadow-lg btn btn-pink" href="#"> READ MORE</a>
       </div>
     </div>
   </div>
@@ -33,11 +33,11 @@
       <p class="mt-2 text-gray-600 sm:mt-4 sm:text-xl">
         <%= post.body.truncate(255, separator: ' ') %>
       </p>
-      <div class="mt-4 sm:mt-6 flex justify-end ">
-        <%= link_to 'READ MORE', post, :class =>"inline-block px-5 py-3 rounded-lg bg-red-300 uppercase tracking-wider font-semibold text-sm text-white shadow-lg sm:text-base hover:bg-red-400 transition duration-300 " %>
+      <div class="mt-4 sm:mt-6 md:flex md:justify-end ">
+        <%= link_to 'READ MORE', post, :class => "inline-block shadow-lg btn btn-pink" %>
         <% if user_signed_in? %>
-          <%= link_to 'Edit', edit_post_path(post), :class => "inline-block px-5 py-3 mx-6 rounded-lg bg-blue-300 uppercase tracking-wider font-semibold text-sm text-white shadow-lg sm:text-base hover:bg-blue-400 transition duration-300 " %>
-          <%= link_to 'Destroy', post, :class => "inline-block px-5 py-3 rounded-lg bg-red-100 uppercase tracking-wider font-semibold text-sm text-white shadow-lg sm:text-base hover:bg-red-600 transition duration-300", method: :delete, data: { confirm: 'Are you sure?' } %>
+          <%= link_to 'Edit', edit_post_path(post), :class => "btn btn-blue mx-3" %>
+          <%= link_to 'Destroy', post, :class => "inline-block  shadow-lg mt-3 md:mt-0 btn btn-outline-pink", method: :delete, data: { confirm: 'Are you sure?' } %>
         <%end%>
       </div>
     </div>
