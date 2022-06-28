@@ -1,6 +1,11 @@
-<h1>Editing Post</h1>
+<div class="flex flex-row justify-center py-12 px-6 md:px-0">
+  <div class="w-full md:w-2/3 py-6 px-6 border rounded-lg shadow-lg">
+	<h1 class="text-center text-2xl font-bold text-gray-900">Editing Post</h1>
 
-<%= render 'form', post: @post %>
+	<%= render 'form', post: @post %>
 
-<%= link_to 'Show', @post %> |
-<%= link_to 'Back', posts_path %>
+	<%= link_to 'Show', @post %> |
+	<%= link_to 'Back', posts_path %>
+  	
+  </div>
+</div>

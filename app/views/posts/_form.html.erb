@@ -6,20 +6,22 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :body %>
-    <%= form.text_field :body, class: "input-field" %>
-    <%= (inline_error_messages post, :body).html_safe %>
-  </div>
-
-  <div class="field">
     <%= form.label :title %>
     <%= form.text_field :title, class: "input-field" %>
     <%= (inline_error_messages post, :title).html_safe %>
   </div>
 
   <div class="field">
+    <%= form.label :body %>
+    <%= form.text_area :body, class: "input-field", rows: 15 %>
+    <%= (inline_error_messages post, :body).html_safe %>
+  </div>
+
+  <div class="field">
     <div class="input-file-field" data-input="post_image">
-      <p class="text-file-name ">Chose File...</p>
+      <p class="text-file-name ">
+        <%= post.new_record? ? "Chose File..." : post.image.original_filename %>
+      </p>
       <span class="btn-browse">Browse</span>
     </div>
     <%= form.file_field :image, class: "hidden" %>
