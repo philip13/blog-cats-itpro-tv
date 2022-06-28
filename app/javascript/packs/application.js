@@ -53,5 +53,12 @@ $(document).on('turbolinks:load', function() {
   $("[data-input]").click(function () {
       var text = $(this).val($(this).attr("data-input"))[0].value;
       $("#"+text).click();
+
+      $("#"+text).change((e) => {
+        var fileName = e.target.files[0].name;
+        $(".text-file-name").text(fileName);
+      })
   });
 });
+
+
