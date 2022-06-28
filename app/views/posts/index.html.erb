@@ -11,7 +11,8 @@
         Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed vel laoreet turpis.
       </p>
       <div class="mt-4 sm:mt-6">
-        <a class="inline-block shadow-lg btn btn-pink" href="#"> READ MORE</a>
+        <!-- <a class="inline-block shadow-lg btn btn-pink" href="#"> READ MORE</a> -->
+        <%= link_to 'READ MORE', @posts.last, :class => "inline-block shadow-lg btn btn-pink" %>
       </div>
     </div>
   </div>
@@ -19,7 +20,6 @@
     <img class="absolute inset-0 w-full h-full object-cover object-center" src="<%= image_path('wellcome.jpeg')%>" alt="Wellcome Cat"/>
   </div>
 </div>
-
 
 <div class="bg-gray-100 lg:bg-white">
   <div class="px-8 py-12 max-w-md mx-auto sm:max-w-xl lg:px-12 lg:py-24 lg:max-w-full xl:mr-0 grid gap-4 grid-cols-1 lg:grid-cols-2">
