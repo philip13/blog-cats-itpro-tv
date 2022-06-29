@@ -36,3 +36,5 @@ yarn-debug.log*
 
 #IOS
 .DS_Store
+
+.env
