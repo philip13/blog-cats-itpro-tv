@@ -5,3 +5,13 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+ require 'faker'
+
+ p = Post.all
+ p.each do |p|
+  3.times do |n|
+    comment = Comment.new(body: Faker::Quotes::Chiquito.sentence)
+    comment.post = p
+    comment.save
+  end
+ end
