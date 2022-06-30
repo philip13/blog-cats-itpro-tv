@@ -7,6 +7,13 @@
 #   Character.create(name: 'Luke', movie: movies.first)
  require 'faker'
 
+6.times do |n|
+  body = Faker::Lorem.paragraph_by_chars(number: 256, supplemental: false)
+  body2 = Faker::Lorem.paragraph_by_chars(number: 256, supplemental: false)
+  p = Post.new(title: Faker::Artist.name, body:  "#{body}<br><br>#{body2}<br><br>#{body}" )
+  p.save
+end
+
  p = Post.all
  p.each do |p|
   3.times do |n|
