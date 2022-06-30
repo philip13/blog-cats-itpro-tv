@@ -13,10 +13,11 @@
         <!-- Primary Navbar items -->
         <div class="hidden md:flex items-center space-x-1">
           <%= link_to 'Home', posts_path, :class => "py-4 px-2 text-green-500 border-b-4 border-red-300 font-semibold hover:text-gray-800 hover:bg-red-200 transition duration-300" %>
-          <%= link_to "New Post", new_post_path(), :class =>"py-4 px-2 text-gray-500 font-semibold hover:text-gray-800 hover:bg-red-200 transition duration-300" %>
-          
+          <% if user_signed_in? %>
+            <%= link_to "New Post", new_post_path(), :class =>"py-4 px-2 text-gray-500 font-semibold hover:text-gray-800 hover:bg-red-200 transition duration-300" %>
+          <%end%>
           <a href="" class="py-4 px-2 text-gray-500 font-semibold hover:text-gray-800 hover:bg-red-200 transition duration-300">
-            Contact Us
+            About Us
           </a>
         </div>
       </div>
